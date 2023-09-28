@@ -1,16 +1,15 @@
-# name entry
 name: Test and Deploy
-
-# defines when to run the action - when we push to main branch, ghactions will run
 on: 
   push:
-    branches: [main]
-
-# steps we want to run for job - node v, scripts to run
+    branches: [ main ]
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
 steps:
-  - uses: actions/checkout@v3
-  - uses: actions/setup-node@
+- uses: actions/checkout@v3
+- uses: actions/setup-node@
 with: 
   node-version: 16.13.1
-  - run: npm ci
-  - run: npm test
+- run: npm ci
+- run: npm test
