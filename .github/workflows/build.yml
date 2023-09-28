@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
 
-# steps we want to run for job
+# steps we want to run for job - node v, scripts to run
 steps:
   - uses: actions/checkout@v3
   - uses: actions/setup-node@
